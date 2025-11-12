@@ -14,6 +14,7 @@
 - Delete to-do List.
 - Mark to-do List if "done".
 - Edit to-do List.
+- Delete all to-do List.
 
 ----------------------------------------------------------------------------------------------------
 
