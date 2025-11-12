@@ -30,7 +30,7 @@ function edittask(index){
             alert("Task cannot exceed 50 characters!");
             edittask(index);
         } else {
-            task[index] = newTask.trim();
+            task[index] = newTask.trim().toLowerCase();
             savetask();
             renderList();
         }      
@@ -42,7 +42,7 @@ function edittask(index){
 
 //Add task function
 function addtask(){
-    const taskvalue = taskinput.value.trim();
+    const taskvalue = taskinput.value.trim().toLowerCase();
     if(taskvalue === "" || null) return alert ("please add a task");
 
     task.push(taskvalue);
