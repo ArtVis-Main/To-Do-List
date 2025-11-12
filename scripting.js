@@ -1,7 +1,7 @@
 const taskinput = document.getElementById('task-input');
 const addtaskbutton = document.getElementById('add-task-button');
 const tasklist = document.getElementById('task-list');
-let taskcondition = false;
+const deltaskbutton = document.getElementById('del-task-button');
 
 //localstorage function
 const task = JSON.parse(localStorage.getItem("task")) || [];
@@ -25,7 +25,7 @@ function renderList() {
 //edit task function
 function edittask(index){
     const newTask = prompt("Edit your task:", task[index])
-    if(newTask !== null && newTask.trim() !== ""){  
+    if(newTask.trim() !== ""){  
         if(newTask.length > 50){
             alert("Task cannot exceed 50 characters!");
             edittask(index);
@@ -51,6 +51,17 @@ function addtask(){
     savetask();
     renderList();
 }
+
+//Delete all tasks function
+function delalltasks(){
+    const confirmDelete = confirm("Are you sure you want to delete all tasks?");
+    if (confirmDelete) {
+        task.length = 0; 
+        savetask();
+        renderList();
+    } else return alert ("Deletion cancelled.");    
+}
+
 //Done task function
 function donetask(index){
     const current = task[index];
@@ -80,8 +91,10 @@ function savetask(){
 //Event listener
 addtaskbutton.addEventListener("click", addtask);
 
+deltaskbutton.addEventListener("click", delalltasks);
+
 taskinput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") addtask ();
-})
+});
 
 renderList();

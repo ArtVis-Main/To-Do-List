@@ -13,7 +13,7 @@ body {
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 600px;
+    width: 750px;
 }
 
 h1 {
@@ -34,7 +34,7 @@ input {
     border-radius: 6px;
 }
 
-button {
+#add-task-button {
     padding: 8px 12px;
     background: #3b82f6;
     color: white;
@@ -44,8 +44,22 @@ button {
     transition: 0.2s;
 }
 
-button:hover {
+#add-task-button:hover {
     background: #2563eb;
+}
+
+#del-task-button{
+    padding: 8px 12px;
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#del-task-button:hover {
+    background: #dc2626;
 }
 
 ul {
